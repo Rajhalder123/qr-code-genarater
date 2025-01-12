@@ -1,0 +1,153 @@
+import { useState, useRef, useEffect } from "react";
+import { toCanvas } from "qrcode";
+
+export default function Home() {
+  const [input, setInput] = useState(""); // For general QR code text
+  const [upiID, setUpiID] = useState(""); // Payee's UPI ID
+  const [amount, setAmount] = useState(""); // Amount to request
+  const [note, setNote] = useState(""); // Payment note
+  const [qrColor, setQrColor] = useState("#000000");
+  const [showQR, setShowQR] = useState(false); // For general QR code visibility
+  const [showPaymentQR, setShowPaymentQR] = useState(false); // For payment QR visibility
+
+  const qrCanvasRef = useRef(null);
+  const paymentQrCanvasRef = useRef(null);
+
+  useEffect(() => {
+    if (input) {
+      setShowQR(true);
+      generateQRCode();
+    } else {
+      setShowQR(false);
+    }
+  }, [input, qrColor]);
+
+  useEffect(() => {
+    if (upiID && amount) {
+      setShowPaymentQR(true);
+      generatePaymentQRCode();
+    } else {
+      setShowPaymentQR(false);
+    }
+  }, [upiID, amount, note]);
+
+  function generateQRCode() {
+    if (input && qrCanvasRef.current) {
+      toCanvas(qrCanvasRef.current, input, {
+        width: 256,
+        margin: 1,
+        color: {
+          dark: qrColor,
+          light: "#ffffff",
+        },
+      });
+    }
+  }
+
+  function generatePaymentQRCode() {
+    if (upiID && amount) {
+      // Dynamically construct the UPI payment string
+      const upiString = `upi://pay?pa=${encodeURIComponent(upiID)}&am=${encodeURIComponent(amount)}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+      console.log("Generated UPI String:", upiString); // Debugging
+
+      // Generate the QR Code
+      if (paymentQrCanvasRef.current) {
+        toCanvas(paymentQrCanvasRef.current, upiString, {
+          width: 300,
+          margin: 2,
+          color: {
+            dark: "#000000",
+            light: "#ffffff",
+          },
+        });
+      }
+    } else {
+      alert("UPI ID and Amount are required for generating a payment QR code!");
+    }
+  }
+
+  function handleDownload(canvasRef, filename) {
+    if (canvasRef.current) {
+      const link = document.createElement("a");
+      link.href = canvasRef.current.toDataURL("image/png");
+      link.download = filename;
+      link.click();
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 text-white p-8">
+      <h1 className="text-4xl font-bold mb-8">Live QR Code Generator</h1>
+
+      {/* General QR Code Section */}
+      <div className="flex flex-col items-center gap-6">
+        <input
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          className="border p-4 rounded-lg w-80 text-gray-800 focus:outline-none focus:ring-4 focus:ring-blue-400"
+          type="text"
+          placeholder="Enter text or URL for QR Code"
+        />
+        {showQR && (
+          <canvas
+            ref={qrCanvasRef}
+            className="bg-white rounded-lg shadow-lg hover:scale-105 transition-transform"
+          />
+        )}
+        {showQR && (
+          <button
+            onClick={() => handleDownload(qrCanvasRef, "qr-code.png")}
+            className="bg-blue-500 px-4 py-2 rounded-lg font-semibold hover:bg-blue-600"
+          >
+            Download QR Code
+          </button>
+        )}
+      </div>
+
+      <hr className="my-8 w-full border-t border-gray-300" />
+
+      {/* Payment Request QR Code Section */}
+      <h2 className="text-3xl font-semibold mb-4">Generate Payment QR Code</h2>
+      <div className="flex flex-col items-center gap-6">
+        <input
+          value={upiID}
+          onChange={(e) => setUpiID(e.target.value)}
+          className="border p-4 rounded-lg w-80 text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-400"
+          type="text"
+          placeholder="Enter UPI ID (e.g., abc@upi)"
+        />
+        <input
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+          className="border p-4 rounded-lg w-80 text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-400"
+          type="number"
+          placeholder="Enter amount (e.g., 500)"
+        />
+        <input
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+          className="border p-4 rounded-lg w-80 text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-400"
+          type="text"
+          placeholder="Enter payment note (optional)"
+        />
+        {showPaymentQR && (
+          <canvas
+            ref={paymentQrCanvasRef}
+            className="bg-white rounded-lg shadow-lg hover:scale-105 transition-transform"
+          />
+        )}
+        {showPaymentQR && (
+          <button
+            onClick={() =>
+              handleDownload(paymentQrCanvasRef, "payment-qr-code.png")
+            }
+            className="bg-green-500 px-4 py-2 rounded-lg font-semibold hover:bg-green-600"
+          >
+            Download Payment QR Code
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
