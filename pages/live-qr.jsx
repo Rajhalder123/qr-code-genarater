@@ -61,6 +61,8 @@ export default function LiveQR() {
           <canvas
             ref={qrCanvasRef}
             className="bg-white rounded-lg shadow-lg hover:scale-105 transition-transform"
+             
+            
           />
         )}
         {showQR && (

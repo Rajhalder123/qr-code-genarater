@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header - Fixed */}
-      <header className="bg-blue-600 text-white py-6 shadow-lg fixed top-0 left-0 w-full z-10">
+      <header className="bg-teal-500 text-white py-6 shadow-lg fixed top-0 left-0 w-full z-10">
         <div className="container mx-auto flex items-center justify-between px-4">
           <h1 className="text-4xl font-bold">QR Code Generator</h1>
         </div>
@@ -87,15 +87,15 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-blue-600 text-white py-8">
+      <footer className="bg-teal-500 text-black py-8">
         <div className="container mx-auto text-center">
           <p>&copy; 2025 QR Code Generator by Raj Haldar. All Rights Reserved.</p>
           <div className="mt-4">
-            <p className="text-gray-400">
+            <p className="text-black-400">
               Contact:{" "}
               <a
                 href="mailto:rajhaldar8000@gmail.com"
-                className="hover:text-gray-300"
+                className="hover:text-orange-300"
               >
                 rajhaldar8000@gmail.com
               </a>{" "}
@@ -104,7 +104,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/raj-halder-2279a1266/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-300"
+                className="hover:text-orange-300"
               >
                 linkedin.com/in/rajhalder
               </a>
