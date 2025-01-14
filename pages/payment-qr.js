@@ -47,7 +47,13 @@ export default function PaymentQR() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 text-white p-8">
-      <h1 className="text-4xl font-bold mb-8">Payment QR Code Generator</h1>
+      {/* Header Section */}
+      <header className="text-center mb-10">
+        <h1 className="text-5xl font-bold mb-4">Payment QR Code Generator</h1>
+        <p className="text-xl font-light">
+          Welcome to the PaymentQR ! Generate QR codes for seamless UPI payments with ease.
+        </p>
+      </header>
 
       {/* Payment QR Code Section */}
       <div className="flex flex-col items-center gap-6">
@@ -89,6 +95,14 @@ export default function PaymentQR() {
           </button>
         )}
       </div>
+
+      {/* More Features Section */}
+      <section className="mt-12 text-center">
+        <h2 className="text-3xl font-bold mb-4">More Features Coming Soon!</h2>
+        <p className="text-lg font-light">
+          Look out for additional features like dynamic UPI splitting, QR size customization, and more.
+        </p>
+      </section>
     </div>
   );
 }

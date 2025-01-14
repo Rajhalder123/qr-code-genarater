@@ -37,10 +37,7 @@ export default function Home() {
                 <h3 className="text-2xl font-semibold mb-4">Fast and Easy</h3>
                 <p className="text-gray-700">Generate your QR codes instantly with an easy-to-use interface.</p>
               </div>
-              <div className="w-64 bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4">Customizable</h3>
-                <p className="text-gray-700">Customize colors and sizes to suit your brand or needs.</p>
-              </div>
+  
               <div className="w-64 bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-semibold mb-4">Secure Payments</h3>
                 <p className="text-gray-700">Generate secure QR codes for UPI and other payment systems.</p>

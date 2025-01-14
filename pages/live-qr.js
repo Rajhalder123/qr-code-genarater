@@ -40,9 +40,15 @@ export default function LiveQR() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-purple-500 via-pink-500 to-red-500 text-white p-8">
-      <h1 className="text-4xl font-bold mb-8">Live QR Code Generator</h1>
+      {/* Header Section */}
+      <header className="text-center mb-10">
+        <h1 className="text-5xl font-bold mb-4">Live QR Code Generator</h1>
+        <p className="text-xl font-light">
+          Welcome to the LiveQR ! Generate, customize, and download QR codes in real-time.
+        </p>
+      </header>
 
-      {/* General QR Code Section */}
+      {/* Main QR Code Generator Section */}
       <div className="flex flex-col items-center gap-6">
         <input
           value={input}
@@ -66,6 +72,14 @@ export default function LiveQR() {
           </button>
         )}
       </div>
+
+      {/* More Features Section */}
+      <section className="mt-12 text-center">
+        <h2 className="text-3xl font-bold mb-4">More Features Coming Soon!</h2>
+        <p className="text-lg font-light">
+          Stay tuned for upcoming features like QR color customization, dynamic resizing, and more.
+        </p>
+      </section>
     </div>
   );
 }
