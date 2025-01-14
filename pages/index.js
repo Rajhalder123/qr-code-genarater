@@ -41,16 +41,16 @@ export default function Home() {
         {/* Feature Section */}
         <section className="bg-gray-100 py-16">
           <div className="container mx-auto text-center px-4">
-            <h2 className="text-4xl font-semibold mb-8">Why Choose Us?</h2>
+            <p className="text-4xl font-semibold mb-8">Why Choose Us?</p>
             <div className="flex justify-center flex-wrap gap-8">
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4">Fast and Easy</h3>
+                <p className="text-2xl font-semibold mb-4">Fast and Easy</p>
                 <p className="text-gray-700">
                   Generate your QR codes instantly with an easy-to-use interface.
                 </p>
               </div>
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
-                <h3 className="text-2xl font-semibold mb-4">Secure Payments</h3>
+                <p className="text-2xl font-semibold mb-4">Secure Payments</p>
                 <p className="text-gray-700">
                   Generate secure QR codes for UPI and other payment systems.
                 </p>
