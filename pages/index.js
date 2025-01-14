@@ -19,8 +19,7 @@ export default function Home() {
               Create Your Custom QR Code in Seconds
             </h2>
             <p className="text-xl mb-8">
-              Easily generate QR codes for URLs, payments, and more with a few
-              clicks!
+              Easily generate QR codes for URLs, payments, and more with a few clicks!
             </p>
             <div className="flex justify-center flex-wrap gap-6">
               <Link
@@ -47,8 +46,7 @@ export default function Home() {
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
                 <h3 className="text-2xl font-semibold mb-4">Fast and Easy</h3>
                 <p className="text-gray-700">
-                  Generate your QR codes instantly with an easy-to-use
-                  interface.
+                  Generate your QR codes instantly with an easy-to-use interface.
                 </p>
               </div>
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
@@ -68,8 +66,7 @@ export default function Home() {
               Ready to Create Your QR Code?
             </h3>
             <p className="text-xl mb-8">
-              Get started today and make your digital experience simpler and
-              faster!
+              Get started today and make your digital experience simpler and faster!
             </p>
             <div className="flex justify-center flex-wrap gap-6">
               <Link
@@ -95,22 +92,20 @@ export default function Home() {
           <p>&copy; 2025 QR Code Generator by Raj Haldar. All Rights Reserved.</p>
           <div className="mt-4">
             <p className="text-gray-400">
-              Contact:
+              Contact:{" "}
               <a
                 href="mailto:rajhaldar8000@gmail.com"
                 className="hover:text-gray-300"
               >
-                {" "}
                 rajhaldar8000@gmail.com
               </a>{" "}
-              | LinkedIn:
+              | LinkedIn:{" "}
               <a
                 href="https://www.linkedin.com/in/raj-halder-2279a1266/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-gray-300"
               >
-                {" "}
                 linkedin.com/in/rajhalder
               </a>
             </p>
