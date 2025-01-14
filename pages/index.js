@@ -41,16 +41,28 @@ export default function Home() {
         {/* Feature Section */}
         <section className="bg-gray-100 py-16">
           <div className="container mx-auto text-center px-4">
+<<<<<<< HEAD
             <h2 className="text-4xl font-semibold text-blue-800 mb-8">Why Choose Us?</h2>
             <div className="flex justify-center flex-wrap gap-8">
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
                 <h3 className="text-2xl font-semibold text-blue-600 mb-4">Fast and Easy</h3>
+=======
+            <p className="text-4xl font-semibold mb-8">Why Choose Us?</p>
+            <div className="flex justify-center flex-wrap gap-8">
+              <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
+                <p className="text-2xl font-semibold mb-4">Fast and Easy</p>
+>>>>>>> 12d1d1aa6987ba191f570badae29a9287bf81c10
                 <p className="text-gray-700">
                   Generate your QR codes instantly with an easy-to-use interface.
                 </p>
               </div>
+<<<<<<< HEAD
               <div className="w-72 bg-white p-6 rounded-lg shadow-lg transform transition-transform hover:scale-105 hover:shadow-xl">
                 <h3 className="text-2xl font-semibold text-blue-600 mb-4">Secure Payments</h3>
+=======
+              <div className="w-72 bg-white p-6 rounded-lg shadow-lg">
+                <p className="text-2xl font-semibold mb-4">Secure Payments</p>
+>>>>>>> 12d1d1aa6987ba191f570badae29a9287bf81c10
                 <p className="text-gray-700">
                   Generate secure QR codes for UPI and other payment systems.
                 </p>
